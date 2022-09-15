@@ -39,7 +39,7 @@ function Index() {
     const handleLogin = (data) => console.log(data);
     const validationOpt = { resolver: yupResolver(schema) }
 
-    const { register, handleSubmit, reset, formState } = useForm(validationOpt)
+    const { register, handleSubmit, formState } = useForm(validationOpt)
   
     const { errors } = formState
 
