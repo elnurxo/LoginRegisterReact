@@ -27,10 +27,12 @@ function Index() {
             })
             .required('Password is required'),
     }).required();
-    const { register, handleSubmit } = useForm({
-        resolver: yupResolver(schema),
-    });
     const handleLogin = (data) => console.log(data);
+    const validationOpt = { resolver: yupResolver(schema) }
+
+    const { register, handleSubmit, reset, formState } = useForm(validationOpt)
+  
+    const { errors } = formState
 
     return (
 
