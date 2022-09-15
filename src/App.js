@@ -6,7 +6,6 @@ function App() {
 
   return (
     <>
-    <h1>Hey there..</h1>
     <Checkbox  defaultChecked />
     <Checkbox {...label} />
    <Checkbox {...label} disabled />
