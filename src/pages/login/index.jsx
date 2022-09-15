@@ -2,9 +2,18 @@ import React from 'react';
 import { TextField, Button } from '@mui/material';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useCookies } from "react-cookie";
 import * as yup from "yup";
 
 function Index() {
+    const [cookies, setCookie] = useCookies(["member"]);
+
+    function CreateCookie() {
+      setCookie("member", "krissanawat", {
+        path: "/"
+      });
+    }
+
     const schema = yup.object().shape({
         email: yup.string().email().required("Email is required"),
         password: yup.string()
@@ -69,13 +78,14 @@ function Index() {
                     {...register('password')}
                 />
                 <div style={{ color: "red", fontSize: "12px" }}>{errors.password?.message}</div>
-                <Button variant="contained"
+                <Button onClick={CreateCookie} variant="contained"
                     sx={{
                         display: 'block',
                         width: 200
                     }}
                     type="submit"
                 >Login</Button>
+                 <p>Show cookie : </p>{cookies.member && <p>{cookies.member}</p>}  
             </form>
 
         </div>
