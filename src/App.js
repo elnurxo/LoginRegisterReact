@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/home";
+<<<<<<< HEAD
 import Login from "./pages/login/index";
 import Register from "./pages/register/register";
 import AppBar from "@mui/material/AppBar";
@@ -9,6 +10,13 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
+=======
+// import Login from "./pages/login/index"
+// import Register from "./pages/register/register.jsx"
+// import Register from "./pages/register/register";
+
+
+>>>>>>> 28562a058135bdf9e183ed14f84f9c74aee03655
 
 function App() {
   return (
