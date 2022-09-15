@@ -1,10 +1,13 @@
-import Login from './pages/login'
+import Register from "./pages/register/register";
+
+
+
 
 function App() {
-  let label = "bla bla";
 
   return (
     <>
+    <Register/>
     </>
   );
 }
