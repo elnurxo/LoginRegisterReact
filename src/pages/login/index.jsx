@@ -8,24 +8,24 @@ function Index() {
     const schema = yup.object().shape({
         email: yup.string().email().required("Email is required"),
         password: yup.string()
-        .min(8, "Password too short")
-        .test("isValidPass", " is not valid", (value, context) => {
-            const hasUpperCase = /[A-Z]/.test(value);
-            const hasLowerCase = /[a-z]/.test(value);
-            const hasNumber = /[0-9]/.test(value);
-            const hasSymbole = /[!@#%&]/.test(value);
-            let validConditions = 0;
-            const numberOfMustBeValidConditions = 3;
-            const conditions = [hasLowerCase, hasUpperCase, hasNumber, hasSymbole];
-            conditions.forEach((condition) =>
-              condition ? validConditions++ : null
-            );
-            if (validConditions >= numberOfMustBeValidConditions) {
-              return true;
-            }
-            return false;
-          })
-        .required('Password is required'),
+            .min(8, "Password too short")
+            .test("isValidPass", " is not valid", (value, context) => {
+                const hasUpperCase = /[A-Z]/.test(value);
+                const hasLowerCase = /[a-z]/.test(value);
+                const hasNumber = /[0-9]/.test(value);
+                const hasSymbole = /[!@#%&]/.test(value);
+                let validConditions = 0;
+                const numberOfMustBeValidConditions = 3;
+                const conditions = [hasLowerCase, hasUpperCase, hasNumber, hasSymbole];
+                conditions.forEach((condition) =>
+                    condition ? validConditions++ : null
+                );
+                if (validConditions >= numberOfMustBeValidConditions) {
+                    return true;
+                }
+                return false;
+            })
+            .required('Password is required'),
     }).required();
     const { register, handleSubmit } = useForm({
         resolver: yupResolver(schema),
@@ -57,6 +57,7 @@ function Index() {
                     name="email"
                     {...register('email')}
                 />
+                <div style={{ color: "red", fontSize: "12px" }}>{errors.email?.message}</div>
                 <TextField id="standard-basic1" label="Password..." variant="standard" type="password"
                     sx={{
                         display: 'block',
@@ -65,6 +66,7 @@ function Index() {
                     name="password"
                     {...register('password')}
                 />
+                <div style={{ color: "red", fontSize: "12px" }}>{errors.password?.message}</div>
                 <Button variant="contained"
                     sx={{
                         display: 'block',

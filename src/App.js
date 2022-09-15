@@ -1,4 +1,5 @@
 import HomePage from "./pages/home";
+import Register from './pages/register/register'
 // import Login from "./pages/login/index"
 // import Register from "./pages/register/register.jsx"
 // import Register from "./pages/register/register";
@@ -8,9 +9,9 @@ import HomePage from "./pages/home";
 function App() {
   return (
     <>
-      {/* < HEAD /> */}
       {/* <Login /> */}
-      <HomePage />
+      {/* <HomePage /> */}
+      <Register />
     </>
   );
 }
