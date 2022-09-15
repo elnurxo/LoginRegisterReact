@@ -1,11 +1,16 @@
-import Login from './pages/login'
+import HomePage from "./pages/home";
+// import Login from "./pages/login/index"
+// import Register from "./pages/register/register.jsx"
+// import Register from "./pages/register/register";
+
+
 
 function App() {
-  let label = "bla bla";
-
   return (
     <>
-      <Login />
+      {/* < HEAD /> */}
+      {/* <Login /> */}
+      <HomePage />
     </>
   );
 }

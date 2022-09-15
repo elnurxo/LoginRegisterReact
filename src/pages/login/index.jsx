@@ -8,7 +8,8 @@ function Index() {
     const schema = yup.object().shape({
         email: yup.string().email().required("Email is required"),
         password: yup.string()
-        .min(8, "Password too short").test("isValidPass", " is not valid", (value, context) => {
+        .min(8, "Password too short")
+        .test("isValidPass", " is not valid", (value, context) => {
             const hasUpperCase = /[A-Z]/.test(value);
             const hasLowerCase = /[a-z]/.test(value);
             const hasNumber = /[0-9]/.test(value);
@@ -30,9 +31,6 @@ function Index() {
         resolver: yupResolver(schema),
     });
     const handleLogin = (data) => console.log(data);
-
-
-
 
     return (
 
